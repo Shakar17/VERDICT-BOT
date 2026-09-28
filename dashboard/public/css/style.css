@@ -1,0 +1,120 @@
+:root {
+  --bg: #0b0d10;
+  --panel: #111827;
+  --panel-alt: #1d2430;
+  --text: #f3f4f6;
+  --muted: #a1a1aa;
+  --accent: #f43f5e;
+  --accent-soft: rgba(244, 63, 94, 0.12);
+  --border: rgba(255,255,255,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+body {
+  background: linear-gradient(180deg, #090b0f 0%, #111827 100%);
+}
+.shell {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 24px 0 60px;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 18px;
+}
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+nav a, .button {
+  color: var(--text);
+  text-decoration: none;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+}
+.hero {
+  display: grid;
+  place-items: center;
+  min-height: 65vh;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  font-size: 12px;
+}
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5rem);
+  margin: 12px 0;
+}
+.sub {
+  max-width: 640px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.dashboard-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+.sidebar, .panel, .card {
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.sidebar {
+  padding: 18px;
+}
+.sidebar h3 {
+  margin-top: 0;
+}
+.sidebar ul {
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.panel {
+  padding: 22px;
+}
+.card {
+  padding: 20px;
+}
+.guild-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.guild-item {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.guild-item:hover { border-color: var(--accent); }
+.user-pill {
+  color: var(--muted);
+  font-size: 14px;
+}

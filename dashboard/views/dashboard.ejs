@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VERDICT Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">VERDICT</div>
+        <nav>
+          <a href="/">Home</a>
+          <% if (user) { %>
+            <span class="user-pill">Logged in as <%= user.global_name || user.username %></span>
+          <% } %>
+        </nav>
+      </header>
+
+      <main class="dashboard-body">
+        <aside class="sidebar">
+          <h3>Navigation</h3>
+          <ul>
+            <li>Servers</li>
+            <li>Moderation</li>
+            <li>Welcome</li>
+            <li>AutoMod</li>
+            <li>Tickets</li>
+            <li>Roles</li>
+            <li>Verification</li>
+            <li>Leveling</li>
+            <li>Giveaways</li>
+            <li>Logs</li>
+            <li>Settings</li>
+          </ul>
+        </aside>
+
+        <section class="panel">
+          <% if (!user) { %>
+            <div class="card">
+              <h2>Access required</h2>
+              <p>Log in with Discord to manage your server settings.</p>
+              <a class="button" href="/auth/discord">Login with Discord</a>
+            </div>
+          <% } else { %>
+            <div class="card">
+              <h2>Server overview</h2>
+              <p>Select a server to edit features including moderation, welcome, verification, logging, and levels.</p>
+              <div id="guild-list" class="guild-grid"></div>
+            </div>
+          <% } %>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
